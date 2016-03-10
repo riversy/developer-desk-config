@@ -47,7 +47,6 @@
       with_items: local_domains
 
   roles:
-    - mysql
     - apache
     - php
 

@@ -2,8 +2,7 @@
 www_path: "www"
 
 # MySQL Settings
-mysql_root_username: root
-mysql_root_password: password
+percona_server_root_password: password
 
 mysql_databases: []
 #   - name: example
