@@ -4,7 +4,7 @@ There are Ansible playbooks which help to configure developers environment for M
 ## Run MySQL inside Docker
 
 ```
-docker run -d -p 3306:3306 -v /var/lib/mysql:/var/lib/mysql --restart always -e MYSQL_PASS="admin" --name=mysql --net=host tutum/mysql
+docker run -d -p 3306:3306 -v /var/lib/mysql:/var/lib/mysql --restart always -e MYSQL_PASS="admin" --name=mysql --net=host tutum/mysql:5.6
 ```
 ## Setup own environment
 

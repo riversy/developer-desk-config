@@ -1,21 +1,6 @@
 ---
 www_path: "www"
 
-# MySQL Settings
-percona_server_root_password: password
-
-mysql_databases: []
-#   - name: example
-#     collation: utf8_general_ci
-#     encoding: utf8
-#     replicate: 1
-
-mysql_users: []
-#   - name: example
-#     host: 127.0.0.1
-#     password: secret
-#     priv: *.*:USAGE
-
 # Apache2
 apache_version: "2.4"
 apache_vhosts: "{{ local_domains }}"
