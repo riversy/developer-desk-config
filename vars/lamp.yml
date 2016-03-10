@@ -1,9 +1,27 @@
 ---
-main_path: "www"
+www_path: "www"
 
-domains:
-  - name: magento.loc
-    domain_folder: "mageto"
+# MySQL Settings
+mysql_root_username: root
+mysql_root_password: password
 
-  - name: akeneo.loc
-    domain_folder: "akeneo"
+mysql_databases: []
+#   - name: example
+#     collation: utf8_general_ci
+#     encoding: utf8
+#     replicate: 1
+
+mysql_users: []
+#   - name: example
+#     host: 127.0.0.1
+#     password: secret
+#     priv: *.*:USAGE
+
+
+# Apache2
+apache_version: "2.4"
+apache_remove_default_vhost: true
+apache_vhosts:
+  # Additional properties: 'serveradmin, serveralias, extra_parameters'.
+  - servername: "local.dev"
+    documentroot: "{{ user_folder }}/{{ www_path }}"
