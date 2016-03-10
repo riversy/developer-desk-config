@@ -51,6 +51,12 @@
     - php
 
   post_tasks:
+    - name: enable php5 mcrypt module
+      shell: php5enmod mcrypt
+      args:
+        creates: /etc/php5/cli/conf.d/20-mcrypt.ini
+      notify: restart apache
+        
     - name: Remove native Apache user
       lineinfile:
         dest: /etc/apache2/envvars
@@ -59,6 +65,7 @@
       with_items:
         - APACHE_RUN_USER
         - APACHE_RUN_GROUP
+      notify: restart apache
 
     - name: Setup username for Apache process
       lineinfile:
