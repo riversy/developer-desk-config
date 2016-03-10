@@ -43,6 +43,8 @@ php_packages:
   - php5-gd
   - php-pear
   - php-apc
+  - php5-intl
+  - php5-xsl
   - libpcre3-dev
 
 # Composer
