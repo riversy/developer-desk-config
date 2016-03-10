@@ -49,6 +49,7 @@
   roles:
     - apache
     - php
+    - composer
 
   post_tasks:
     - name: enable php5 mcrypt module
@@ -56,7 +57,7 @@
       args:
         creates: /etc/php5/cli/conf.d/20-mcrypt.ini
       notify: restart apache
-        
+
     - name: Remove native Apache user
       lineinfile:
         dest: /etc/apache2/envvars

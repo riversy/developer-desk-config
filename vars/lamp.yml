@@ -44,3 +44,8 @@ php_packages:
   - php-pear
   - php-apc
   - libpcre3-dev
+
+# Composer
+composer_path: /usr/local/bin/composer
+composer_update: true
+composer_update_day: 20
