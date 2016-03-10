@@ -4,18 +4,70 @@
   sudo: yes
 
   vars_files:
-    - vars/main.yml
+    - vars/local.yml
     - vars/lamp.yml
 
   pre_tasks:
     - name: Update apt cache if needed.
-      apt: update_cache=yes cache_valid_time=86400
+      apt:
+        update_cache: yes
+        cache_valid_time: 86400
+
     - name: Ensure user exist
-      user: name={{ user_name }} state=present generate_ssh_key=yes ssh_key_bits=2048 ssh_key_file=.ssh/id_rsa
+      user:
+        name: "{{ user_name }}"
+        state: present
+        generate_ssh_key: yes
+        ssh_key_bits: 2048
+        ssh_key_file: .ssh/id_rsa
+
     - name: Ensure www folder exists
-      file: path={{ user_folder }} state=directory
+      file:
+        path: "{{ user_folder }}"
+        state: directory
+        group: "{{ user_name }}"
+        owner: "{{ user_name }}"
+        mode: 0755
+
+    - name: "Update hosts file"
+      lineinfile:
+        dest: /etc/hosts
+        regexp: '.*{{ item }}$'
+        line: "127.0.0.1 {{item.servername}}"
+        state: present
+      with_items: local_domains
+
+    - name: Ensure www folder exists
+      file:
+        path: "{{ item.documentroot }}"
+        group: "{{ user_name }}"
+        owner: "{{ user_name }}"
+        state: directory
+        mode: 0755
+      with_items: local_domains
 
   roles:
-    - mysql
+    # - mysql
     - apache
-    
+    - php
+
+  post_tasks:
+    - name: Remove native Apache user
+      lineinfile:
+        dest: /etc/apache2/envvars
+        regexp: 'export {{ item }}\=www-data$'
+        state: absent
+      with_items:
+        - APACHE_RUN_USER
+        - APACHE_RUN_GROUP
+
+    - name: Setup username for Apache process
+      lineinfile:
+        dest: /etc/apache2/envvars
+        regexp: 'export {{ item }}\={{ user_name }}$'
+        line: "export {{ item }}={{ user_name }}"
+        state: present
+      with_items:
+        - APACHE_RUN_USER
+        - APACHE_RUN_GROUP
+      notify: restart apache

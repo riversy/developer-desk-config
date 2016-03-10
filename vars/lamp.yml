@@ -17,11 +17,31 @@ mysql_users: []
 #     password: secret
 #     priv: *.*:USAGE
 
-
 # Apache2
 apache_version: "2.4"
-apache_remove_default_vhost: true
-apache_vhosts:
-  # Additional properties: 'serveradmin, serveralias, extra_parameters'.
-  - servername: "local.dev"
-    documentroot: "{{ user_folder }}/{{ www_path }}"
+apache_vhosts: "{{ local_domains }}"
+
+# PHP
+php_expose_php: "On"
+php_memory_limit: "512M"
+php_max_execution_time: "3600"
+php_max_input_time: "3600"
+php_max_input_vars: "1000"
+php_realpath_cache_size: "32K"
+php_upload_max_filesize: "64M"
+php_post_max_size: "32M"
+php_packages:
+  - php5
+  - php5-mcrypt
+  - php5-cli
+  - php5-common
+  - php5-curl
+  - php5-mcrypt
+  - libapache2-mod-php5
+  - php5-mysql
+  - php5-dev
+  - php5-fpm
+  - php5-gd
+  - php-pear
+  - php-apc
+  - libpcre3-dev

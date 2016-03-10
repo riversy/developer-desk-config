@@ -4,3 +4,6 @@
 [submodule "roles/apache"]
 	path = roles/apache
 	url = git@github.com:geerlingguy/ansible-role-apache.git
+[submodule "roles/php"]
+	path = roles/php
+	url = git@github.com:geerlingguy/ansible-role-php.git

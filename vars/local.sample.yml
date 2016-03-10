@@ -1,0 +1,9 @@
+---
+user_name: sample_user
+user_folder: "/home/{{user_name}}"
+local_domains:
+  # Additional properties: 'serveradmin, serveralias, extra_parameters'.
+  - servername: "magento.loc"
+    documentroot: "{{ user_folder }}/{{ www_path }}/magento"
+  - servername: "akeneo.loc"
+    documentroot: "{{ user_folder }}/{{ www_path }}/akeneo/web"
