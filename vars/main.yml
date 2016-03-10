@@ -1,0 +1,3 @@
+---
+user_name: sample_user
+user_folder: "/home/{{user_name}}"

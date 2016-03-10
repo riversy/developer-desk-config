@@ -1,0 +1,9 @@
+---
+main_path: "www"
+
+domains:
+  - name: magento.loc
+    domain_folder: "mageto"
+
+  - name: akeneo.loc
+    domain_folder: "akeneo"
