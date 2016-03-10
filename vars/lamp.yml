@@ -6,6 +6,8 @@ apache_version: "2.4"
 apache_vhosts: "{{ local_domains }}"
 
 # PHP
+php_error_reporting: "E_ALL"
+php_display_errors: "On"
 php_expose_php: "On"
 php_memory_limit: "512M"
 php_max_execution_time: "3600"
