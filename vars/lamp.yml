@@ -9,7 +9,7 @@ apache_vhosts: "{{ local_domains }}"
 php_error_reporting: "E_ALL"
 php_display_errors: "On"
 php_expose_php: "On"
-php_memory_limit: "512M"
+php_memory_limit: "2G"
 php_max_execution_time: "3600"
 php_max_input_time: "3600"
 php_max_input_vars: "1000"
@@ -30,6 +30,7 @@ php_packages:
   - php5-gd
   - php-pear
   - php-apc
+  - php5-apcu
   - php5-intl
   - php5-xsl
   - libpcre3-dev
