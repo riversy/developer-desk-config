@@ -9,7 +9,11 @@ docker run -d -p 3306:3306 -v /var/lib/mysql:/var/lib/mysql --restart always -e 
 
 ## Clone this repo
 
-Clone this repo with `--recursive` flag to get it with submodules. 
+Clone this repo with `--recursive` flag to get it with submodules.
+
+```
+git clone --recursive git@github.com:riversy/developer-desk-config.git
+```
 
 ## Setup own environment
 
