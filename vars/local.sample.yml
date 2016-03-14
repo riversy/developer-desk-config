@@ -8,3 +8,16 @@ local_domains:
     documentroot: "{{ user_folder }}/{{ www_path }}/magento"
   - servername: "akeneo.loc"
     documentroot: "{{ user_folder }}/{{ www_path }}/akeneo/web"
+
+# Postfix Settings
+postfix_domain: sample.com
+postfix_notify_email: postmaster@sample.com
+postfix_use_smtp: true
+postfix_relayhost: '[smtp.mailgun.org]'
+postfix_relayhost_user: postmaster@sample.com
+postfix_relayhost_pass: smtp_password
+
+# Mandrill is also works
+# postfix_relayhost: '[smtp.mandrillapp.com]'
+# postfix_relayhost_user: user@sample.com
+# postfix_relayhost_pass: smtp_password

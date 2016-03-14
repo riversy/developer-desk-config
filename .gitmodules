@@ -7,3 +7,6 @@
 [submodule "roles/composer"]
 	path = roles/composer
 	url = git@github.com:kosssi/ansible-role-composer.git
+[submodule "roles/postfix"]
+	path = roles/postfix
+	url = git@github.com:petemcw/ansible-role-postfix.git

@@ -50,6 +50,7 @@
     - apache
     - php
     - composer
+    - postfix
 
   post_tasks:
     - name: Enable php5 mcrypt module

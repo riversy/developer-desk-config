@@ -6,6 +6,11 @@ There are Ansible playbooks which help to configure developers environment for M
 ```
 docker run -d -p 3306:3306 -v /var/lib/mysql:/var/lib/mysql --restart always -e MYSQL_PASS="admin" --name=mysql --net=host tutum/mysql:5.6
 ```
+
+## Clone this repo
+
+Clone this repo with `--recursive` flag to get it with submodules. 
+
 ## Setup own environment
 
 Copy `vars/local.sample.yml` to `vars/local.yml` and set your own user name and path to working folder.
