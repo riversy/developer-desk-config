@@ -54,7 +54,7 @@
 
   post_tasks:
     - name: Enable php5 mcrypt module
-      shell: php5enmod mcrypt
+      shell: phpenmod mcrypt
       args:
         creates: /etc/php5/cli/conf.d/20-mcrypt.ini
       notify: restart apache
