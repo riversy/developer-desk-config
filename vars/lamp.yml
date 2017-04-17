@@ -17,21 +17,23 @@ php_realpath_cache_size: "32K"
 php_upload_max_filesize: "64M"
 php_post_max_size: "32M"
 php_packages:
-  - php5.6
-  - php5.6-mcrypt
-  - php5.6-cli
-  - php5.6-common
-  - php5.6-curl
-  - php5.6-mcrypt
-  - libapache2-mod-php5.6
-  - php5.6-mysql
-  - php5.6-dev
-  - php5.6-fpm
-  - php5.6-gd
+  - php
+  - php-mcrypt
+  - php-cli
+  - php-common
+  - php-curl
+  - php-mcrypt
+  - libapache2-mod-php
+  - php-mysql
+  - php-dev
+  - php-fpm
+  - php-gd
   - php-pear
-  - php5.6-apcu
-  - php5.6-intl
-  - php5.6-xsl
+  - php-apcu
+  - php-intl
+  - php-xsl
+  - php-mbstring
+  - php-zip
   - libpcre3-dev
 
 # Composer
