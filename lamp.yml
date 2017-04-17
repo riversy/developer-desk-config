@@ -35,7 +35,7 @@
         regexp: '.*{{ item }}$'
         line: "127.0.0.1 {{item.servername}}"
         state: present
-      with_items: local_domains
+      with_items: "{{ local_domains }}"
 
     - name: Ensure www folder exists
       file:
@@ -44,13 +44,12 @@
         owner: "{{ user_name }}"
         state: directory
         mode: 0755
-      with_items: local_domains
+      with_items: "{{ local_domains }}"
 
   roles:
     - apache
     - php
     - composer
-    - postfix
 
   post_tasks:
     - name: Enable php5 mcrypt module
